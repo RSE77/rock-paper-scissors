@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <script>
+
+let playerScore = 0;
+let computerScore = 0;
+let draw = 0;
+let gamesPlayed = 0;
+
+function computerPlay() {
+    let choices = ['rock', 'paper', 'scissors'];
+    let result = choices[Math.floor(Math.random() * choices.length)];
+    return result;
+}
+
+function game() {
+    function playRound(playerSelection, computerSelection) {
+         playerSelection = prompt("Choose Rock, Paper or Scissors", '').toLowerCase()
+    
+        //player chooses rock
+    if (playerSelection === 'rock' && computerSelection === 'paper') {
+        console.log("Paper beats rock. You lose.");
+            computerScore++;
+            return computerScore;
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        console.log("Rock beats scissors. You win!");
+            playerScore++;
+            return playerScore;
+    } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+        console.log("Rock and rock, hmm...you draw.");
+            draw++;
+            return draw;
+        //player chooses paper
+    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        console.log("Paper and paper, hmm...You draw.");
+            draw++;
+            return draw;
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        console.log("Scissors beats paper. You lose");
+       computerScore++;
+       return computerScore;
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        console.log("Paper beats rock. You win!");
+        playerScore++;
+        return playerScore;
+     
+        //player choose scissors
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        console.log("Scissors beats paper. You win!");
+        playerScore++;
+        return playerScore;
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        console.log("Scissors and scissors, hmm...You draw.");
+            draw++;
+            return draw;
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        console.log("Rock beats scissors. You lose.");
+        computerScore++;
+        return computerScore;
+    
+        //other response
+    } else {
+        console.log("I hope that was a typo. No cheat codes, bruh.");
+    } 
+
+    
+    }
+
+
+    playRound(playerSelection, computerSelection);
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+        
+    playRound(playerSelection, computerSelection);
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+        
+    playRound(playerSelection, computerSelection);
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+        
+    playRound(playerSelection, computerSelection);
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+        
+    playRound(playerSelection, computerSelection);  
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+            let champion; {
+        if ((gamesPlayed === 5) && (playerScore > computerScore)) {
+            champion = console.log("Congratulations, you won the series and are the champion");
+        } else if ((gamesPlayed === 5) && (computerScore > playerScore)) {
+            champion = console.log("Sorry you lost. Computer is champion. Better luck next time.");
+        } else {
+            ((gamesPlayed === 5) && (computerScore == playerScore))
+            champion = console.log("It's a tie, which is kind of like kissing your sister. Maybe try again.");
+            return champion;
+        }
+
+    }
+    
+
+    }
+
+    const playerSelection = 'rock';
+    const computerSelection = computerPlay();
+    game();
+
+    </script>
+    </body>
+</html>
