@@ -6,18 +6,18 @@
 let playerScore = 0;
 let computerScore = 0;
 let draw = 0;
-let gamesPlayed = 0;
+let gamesPlayed = 1;
 
-function computerPlay() {
-    let choices = ['rock', 'paper', 'scissors'];
-    let result = choices[Math.floor(Math.random() * choices.length)];
-    return result;
-}
+    function computerPlay() {
+        let choices = ['rock', 'paper', 'scissors'];
+        var result = choices[Math.floor(Math.random() * choices.length)];
+        return result;
+    } 
 
-function game() {
-    function playRound(playerSelection, computerSelection) {
-         playerSelection = prompt("Choose Rock, Paper or Scissors", '').toLowerCase()
-    
+function playRound(playerSelection, computerSelection) {
+     
+
+    playerSelection = prompt("Choose Rock, Paper or Scissors", '').toLowerCase()
         //player chooses rock
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         console.log("Paper beats rock. You lose.");
@@ -64,43 +64,46 @@ function game() {
         console.log("I hope that was a typo. No cheat codes, bruh.");
     } 
 
+}
+
+
+function game() {
+  
+        console.log("Welcome to Rock, Paper, Scissors best of 5 series. Let's see what happens");
+    playRound(playerSelection, computerPlay());
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+      
+    playRound(playerSelection, computerPlay());
+        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
     
-    }
-
-
-    playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerPlay()); 
         console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
-        
-    playRound(playerSelection, computerSelection);
+    
+    playRound(playerSelection, computerPlay());
         console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
-        
-    playRound(playerSelection, computerSelection);
-        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
-        
-    playRound(playerSelection, computerSelection);
-        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
-        
-    playRound(playerSelection, computerSelection);  
-        console.log("This is Game " + ++gamesPlayed + ". Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
-            let champion; {
-        if ((gamesPlayed === 5) && (playerScore > computerScore)) {
+    
+   
+    playRound(playerSelection, computerPlay()); 
+        console.log("Game over. Player has " + playerScore + ". Computer has " + computerScore + ". There are " + draw + " draws.");
+            
+       let champion; {
+        if ((gamesPlayed === +5) && (playerScore > computerScore)) {
             champion = console.log("Congratulations, you won the series and are the champion");
-        } else if ((gamesPlayed === 5) && (computerScore > playerScore)) {
+        } else if ((gamesPlayed === +5) && (computerScore > playerScore)) {
             champion = console.log("Sorry you lost. Computer is champion. Better luck next time.");
         } else {
-            ((gamesPlayed === 5) && (computerScore == playerScore))
+            ((gamesPlayed === +5) && (computerScore == playerScore))
             champion = console.log("It's a tie, which is kind of like kissing your sister. Maybe try again.");
             return champion;
         }
-
-    }
-    
-
     }
 
-    const playerSelection = 'rock';
-    const computerSelection = computerPlay();
-    game();
+
+}
+
+var playerSelection = "rock";
+var computerSelection = computerPlay();
+game();
 
     </script>
     </body>
